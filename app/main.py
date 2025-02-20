@@ -52,6 +52,8 @@ class DeliveryDrone(FlyingRobot):
     def hook_load(self, cargo: Cargo) -> None:
         if cargo.weight <= self.max_load_weight and self.current_load is None:
             self.current_load = cargo
+        else:
+            print("Cargo is too heavy")
 
     def unhook_load(self) -> None:
         self.current_load = None
